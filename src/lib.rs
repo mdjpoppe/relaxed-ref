@@ -54,7 +54,8 @@
 //! }
 //! ```
 //!
-//! See `examples/value_family.rs` for a slightly more complete example.
+//! See [`examples/value_family.rs`][example-value-family] for a slightly more
+//! complete example.
 //!
 //! # Usage and Examples
 //!
@@ -164,6 +165,7 @@
 //! This is documented per function.
 //!
 //! [implied-bounds]: https://doc.rust-lang.org/reference/trait-bounds.html#implied-bounds
+//! [example-value-family]: https://github.com/mdjpoppe/relaxed-ref/blob/main/examples/value_family.rs
 
 #![no_std]
 #![deny(unsafe_op_in_unsafe_fn)]
