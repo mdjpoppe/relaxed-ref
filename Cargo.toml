@@ -1,0 +1,28 @@
+[package]
+name = "relaxed-ref"
+version = "0.1.0"
+description = "Reference types that don't require `T: 'a` to be well-formed, with the bound statically checked at the use site. Useful in GAT-based type families and similar contexts."
+license = "MIT OR Apache-2.0"
+edition = "2021"
+rust-version = "1.56.0"
+repository = "https://github.com/mdjpoppe/relaxed-ref"
+documentation = "https://docs.rs/relaxed-ref"
+keywords = ["reference", "lifetime", "gat", "higher-kinded"]
+categories = ["rust-patterns", "no-std", "no-std::no-alloc"]
+
+[dependencies]
+rustversion = "1.0"
+
+[dev-dependencies]
+assert-impl-trait = "1.0.0"
+static_assertions = "1.1.0"
+trybuild = "1.0"
+
+[lints.clippy]
+cargo = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+style = { level = "warn", priority = -1 }
+
+std_instead_of_core = "warn"
+std_instead_of_alloc = "warn"
+undocumented_unsafe_blocks = "warn"

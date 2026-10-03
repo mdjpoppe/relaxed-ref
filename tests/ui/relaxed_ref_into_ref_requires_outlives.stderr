@@ -1,0 +1,12 @@
+error[E0309]: the parameter type `T` may not live long enough
+ --> tests/ui/relaxed_ref_into_ref_requires_outlives.rs:4:13
+  |
+3 | fn into_ref_requires_outlives<'a, T>(r: RelaxedRef<'a, T>) {
+  |                               -- the parameter type `T` must be valid for the lifetime `'a` as defined here...
+4 |     let _ = RelaxedRef::<'a, T>::into_ref(r);
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ...so that the type `T` will meet its required lifetime bounds
+  |
+help: consider adding an explicit lifetime bound
+  |
+3 | fn into_ref_requires_outlives<'a, T: 'a>(r: RelaxedRef<'a, T>) {
+  |                                    ++++

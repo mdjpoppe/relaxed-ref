@@ -1,0 +1,14 @@
+error: lifetime may not live long enough
+ --> tests/ui/relaxed_ref_mut_type_not_covariant.rs:4:12
+  |
+3 | fn type_not_covariant<'short, 'mid: 'short, 'long: 'mid, T>(r: RelaxedRefMut<'short, &'long T>) {
+  |                               ----          ----- lifetime `'long` defined here
+  |                               |
+  |                               lifetime `'mid` defined here
+4 |     let _: RelaxedRefMut<'short, &'mid T> = r;
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type annotation requires that `'mid` must outlive `'long`
+  |
+  = help: consider adding the following bound: `'mid: 'long`
+  = note: requirement occurs because of the type `RelaxedRefMut<'_, &T>`, which makes the generic argument `&T` invariant
+  = note: the struct `RelaxedRefMut<'a, T>` is invariant over the parameter `T`
+  = help: see <https://doc.rust-lang.org/nomicon/subtyping.html> for more information about variance

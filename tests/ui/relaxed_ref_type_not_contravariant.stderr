@@ -1,0 +1,11 @@
+error: lifetime may not live long enough
+ --> tests/ui/relaxed_ref_type_not_contravariant.rs:4:12
+  |
+3 | fn type_not_contravariant<'short, 'mid: 'short, 'long: 'mid, T>(r: RelaxedRef<'short, &'mid T>) {
+  |                                   ----          ----- lifetime `'long` defined here
+  |                                   |
+  |                                   lifetime `'mid` defined here
+4 |     let _: RelaxedRef<'short, &'long T> = r;
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ type annotation requires that `'mid` must outlive `'long`
+  |
+  = help: consider adding the following bound: `'mid: 'long`
