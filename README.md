@@ -37,6 +37,11 @@ impl<'a> ValueFamily for RefFamily<'a> {
 }
 ```
 
+## Documentation
+
+The API documentation and usage examples are available on
+[docs.rs](https://docs.rs/relaxed-ref).
+
 ## License
 
 Licensed under either of
