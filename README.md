@@ -1,5 +1,10 @@
 # relaxed-ref
 
+[![Crates.io Version](https://img.shields.io/crates/v/relaxed-ref)](https://crates.io/crates/relaxed-ref)
+[![docs.rs](https://img.shields.io/docsrs/relaxed-ref)](https://docs.rs/relaxed-ref/0.1.0/relaxed_ref/)
+![Crates.io MSRV](https://img.shields.io/crates/msrv/relaxed-ref)
+![Crates.io License](https://img.shields.io/crates/l/relaxed-ref)
+
 This crate provides `RelaxedRef<'a, T>` and `RelaxedRefMut<'a, T>`,
 relaxed versions of `&'a T` and `&'a mut T`, respectively, that are well-formed
 without requiring `T: 'a`.
